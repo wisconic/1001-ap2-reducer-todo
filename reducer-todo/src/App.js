@@ -23,6 +23,11 @@ function App() {
     dispatch({ type: 'TOGGLE_COMPLETED', payload: todoId });
   };
 
+  const clearCompleted = (e) => {
+    // e.preventDefault();
+    dispatch({ type: 'CLEAR_COMPLETED' });
+  };
+
   return (
     <div className='App'>
       <h1>Reducer Pattern Todo App</h1>
@@ -30,6 +35,7 @@ function App() {
         currentTodo={currentTodo}
         handleChanges={handleChanges}
         handleSubmit={handleSubmit}
+        clearCompleted={clearCompleted}
       />
       <TodosList todos={state} toggleComplete={toggleComplete} />
     </div>
